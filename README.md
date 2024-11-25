@@ -1,66 +1,113 @@
-# Component Library
+# Ben Component Library
 
-A modern React component library featuring reusable UI components built with Storybook and styled with Tailwind CSS.
+A modern, customizable React component library featuring beautiful UI components. Built with Storybook and styled with CSS modules for maximum flexibility and maintainability.
 
-## Available Components
+## 🎨 Features
+
+- **Themeable Components**: Light, Dark, and Primary themes for all components
+- **Responsive Design**: Mobile-first approach with responsive breakpoints
+- **Accessibility**: ARIA support and keyboard navigation
+- **Modern Styling**: CSS Modules with CSS Variables for easy customization
+- **Interactive Documentation**: Full Storybook integration with live examples
+
+## 📦 Components
 
 ### Button
-- Primary, Submit, and Custom variants
-- Configurable type and styling
-- Built with Tailwind CSS using ui- prefix
-
-### Input
-- Optional icon support
-- Customizable placeholder
-- Responsive design
-- Tailwind styling
-
-### SearchBar
-- Integrated search functionality
-- Combines Input and Button components
-- Customizable placeholder
-- Search callback support
+- Multiple themes (light, dark, primary)
+- Size variants (small, medium, large)
+- States (hover, focus, disabled, loading)
+- Custom icons support
+- Hover animations
 
 ### Card
-- Flexible content display
-- Icon support
-- Responsive design
-- Multiple variants
+- Flexible layout system
+- Theme support
+- Customizable borders and shadows
+- Animation effects
+- Header and footer sections
+- Responsive behavior
 
-## Tech Stack
+### Input
+- Theme variants
+- Icon support (left/right)
+- Validation states
+- Clear button option
+- Custom styling options
+- Accessibility features
 
-- React
-- Storybook 8.4.5
-- Tailwind CSS
+### SearchBar
+- Advanced search functionality
+- Loading states
+- Clear button
+- Custom themes
+- Keyboard navigation
+- Mobile optimization
+
+## 🛠 Tech Stack
+
+- React 18
+- Storybook 8
+- CSS Modules
 - PropTypes
 - Vite
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Install dependencies:
+1. Install the package:
+```bash
+npm install @my-components/component-library-modules
+```
+
+2. Import components:
+```jsx
+import { Button, Card, Input, SearchBar } from '@my-components/component-library-modules';
+```
+
+3. Use in your React app:
+```jsx
+function App() {
+  return (
+    <div>
+      <Card theme="primary">
+        <h2>Welcome!</h2>
+        <Input placeholder="Enter your name" />
+        <Button>Submit</Button>
+      </Card>
+    </div>
+  );
+}
+```
+
+## 💻 Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/bendarte/ben-component-library.git
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Run Storybook to view components:
+3. Start Storybook:
 ```bash
 npm run storybook
 ```
 
-## Development
+## 📚 Documentation
 
-Components are located in `src/components/` with the following structure:
-```
-src/
-  components/
-    button/
-    input/
-    searchbar/
-    card/
-```
+Full documentation and live examples available in Storybook. Run `npm run storybook` and visit:
+- Component API documentation
+- Interactive examples
+- Theme customization
+- Accessibility guidelines
+- Responsive demos
 
-Each component has:
-- Component file (*.jsx)
-- Stories file (*.stories.jsx)
-- PropTypes validation
-- Tailwind styling with ui- prefix (prevents style conflicts when used in other projects)
+## 🤝 Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting PRs.
+
+## 📄 License
+
+MIT © [Ben]
