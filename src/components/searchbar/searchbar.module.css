@@ -1,0 +1,205 @@
+.form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.inputWrapper {
+  flex-grow: 1;
+  max-width: 42rem;
+}
+
+.searchbar-wrapper {
+  position: relative;
+  width: var(--searchbar-width, 100%);
+}
+
+.searchbar {
+  width: 100%;
+  font-family: var(--searchbar-font-family, 'Inter', sans-serif);
+  font-size: var(--searchbar-font-size, 1rem);
+  line-height: var(--searchbar-line-height, 1.5);
+  padding: var(--searchbar-padding-y, 0.5rem) var(--searchbar-padding-x, 1rem);
+  padding-left: calc(var(--searchbar-padding-x, 1rem) * 2.5);
+  color: var(--searchbar-text-color, #333);
+  background-color: var(--searchbar-bg, white);
+  border: var(--searchbar-border-width, 1px) solid var(--searchbar-border-color, #e0e0e0);
+  border-radius: var(--searchbar-radius, 8px);
+  transition: all 0.2s ease;
+}
+
+/* Size variants */
+.small {
+  --searchbar-font-size: 0.875rem;
+  --searchbar-padding-y: 0.375rem;
+  --searchbar-padding-x: 0.75rem;
+  --searchbar-radius: 6px;
+}
+
+.medium {
+  --searchbar-font-size: 1rem;
+  --searchbar-padding-y: 0.5rem;
+  --searchbar-padding-x: 1rem;
+  --searchbar-radius: 8px;
+}
+
+.large {
+  --searchbar-font-size: 1.125rem;
+  --searchbar-padding-y: 0.75rem;
+  --searchbar-padding-x: 1.25rem;
+  --searchbar-radius: 10px;
+}
+
+/* Themes */
+.theme-light {
+  --searchbar-bg: white;
+  --searchbar-text-color: #333;
+  --searchbar-border-color: #e0e0e0;
+  --searchbar-placeholder-color: #9ca3af;
+  --searchbar-focus-border: #3b82f6;
+  --searchbar-focus-shadow: rgba(59, 130, 246, 0.1);
+  --searchbar-icon-color: #6b7280;
+}
+
+.theme-dark {
+  --searchbar-bg: #1f2937;
+  --searchbar-text-color: #f3f4f6;
+  --searchbar-border-color: #374151;
+  --searchbar-placeholder-color: #6b7280;
+  --searchbar-focus-border: #60a5fa;
+  --searchbar-focus-shadow: rgba(96, 165, 250, 0.1);
+  --searchbar-icon-color: #9ca3af;
+}
+
+.theme-primary {
+  --searchbar-bg: #eff6ff;
+  --searchbar-text-color: #1e40af;
+  --searchbar-border-color: #93c5fd;
+  --searchbar-placeholder-color: #60a5fa;
+  --searchbar-focus-border: #3b82f6;
+  --searchbar-focus-shadow: rgba(59, 130, 246, 0.2);
+  --searchbar-icon-color: #3b82f6;
+}
+
+/* States */
+.searchbar:focus {
+  outline: none;
+  border-color: var(--searchbar-focus-border);
+  box-shadow: 0 0 0 4px var(--searchbar-focus-shadow);
+}
+
+.searchbar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--searchbar-disabled-bg, #f3f4f6);
+}
+
+.searchbar::placeholder {
+  color: var(--searchbar-placeholder-color);
+}
+
+/* Border variants */
+.border-none {
+  border: none;
+}
+
+.border-bottom {
+  border: none;
+  border-bottom: var(--searchbar-border-width, 1px) solid var(--searchbar-border-color);
+  border-radius: 0;
+}
+
+.border-thick {
+  --searchbar-border-width: 2px;
+}
+
+/* Icon styles */
+.search-icon {
+  position: absolute;
+  left: var(--searchbar-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--searchbar-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.clear-button {
+  position: absolute;
+  right: var(--searchbar-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--searchbar-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.clear-button:hover {
+  opacity: 1;
+}
+
+/* Animation variants */
+.animate-focus {
+  transition: transform 0.2s ease;
+}
+
+.animate-focus:focus {
+  transform: scale(1.01);
+}
+
+/* Width variants */
+.width-auto {
+  width: auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+/* Font weight variants */
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Rounded variants */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Loading state */
+.loading .search-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .searchbar {
+    font-size: calc(var(--searchbar-font-size) * 0.95);
+  }
+}
